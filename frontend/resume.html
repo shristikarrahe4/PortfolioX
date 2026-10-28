@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resume builder - PortfolioX</title>
+<meta name="description" content="PortfolioX helps students build a professional portfolio, check readiness and prepare for internships and placements.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+</head>
+<body data-page="resume">
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <button id="menu-btn" class="icon-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar">&#9776;</button>
+  <span class="brand">PortfolioX</span>
+</header>
+<div class="shell">
+  <aside id="sidebar" class="sidebar" aria-label="Sidebar"></aside>
+  <main id="main" class="main">
+
+    <div class="page-head"><div><h1>Resume builder</h1><p class="muted">Your resume is generated from your saved portfolio information.</p></div>
+      <button id="print-btn" class="btn btn-primary no-print" type="button">Print / Save as PDF</button></div>
+    <div id="status" role="status" aria-live="polite"></div>
+    <div class="resume-layout">
+      <div class="card">
+        <form id="resume-form" novalidate>
+          <h2>Resume details (saved)</h2>
+          <p class="small muted">These fields are private and saved in your account. They are never shown on your public portfolio.</p>
+          <div class="field"><label for="objective">Career objective</label><textarea id="objective" name="objective" maxlength="400"></textarea><p class="hint">1-2 sentences, up to 400 characters.</p></div>
+          <div class="field"><label for="phone">Phone number</label><input id="phone" name="phone" type="tel" maxlength="20" autocomplete="tel"></div>
+          <div class="field"><label for="location">Location</label><input id="location" name="location" type="text" maxlength="100" placeholder="City, State"></div>
+          <div class="field"><label for="education_summary">Education summary</label><input id="education_summary" name="education_summary" type="text" maxlength="300" placeholder="B.Tech CSE, 2026-2030, CGPA 8.5"></div>
+          <div class="field"><label for="availability">Availability</label><input id="availability" name="availability" type="text" maxlength="150" placeholder="Available for internships from May 2027"></div>
+          <button class="btn btn-primary" type="submit">Save resume details</button>
+        </form>
+        <hr>
+        <h3>What is saved and what is generated?</h3>
+        <p class="small"><strong>Saved here:</strong> career objective, phone, location, education summary, availability.</p>
+        <p class="small"><strong>Generated automatically</strong> from your other pages (edit them there): name, headline, contact email, links, college/course/year, skills, up to 5 projects (featured first) and up to 6 achievements. The resume includes your private items too, because it is for you to send.</p>
+      </div>
+      <div class="card"><h2 class="no-print">Preview</h2><div id="resume-sheet" class="resume-sheet" aria-live="polite"></div>
+        <p class="small muted no-print">Click &ldquo;Print / Save as PDF&rdquo; and choose &ldquo;Save as PDF&rdquo; as the destination in your browser&rsquo;s print window.</p></div>
+    </div>
+  </main>
+</div>
+<div id="scrim" class="scrim"></div>
+<script src="/vendor/supabase.js"></script>
+<script src="/js/common.js"></script>
+<script src="/js/resume.js"></script>
+</body>
+</html>

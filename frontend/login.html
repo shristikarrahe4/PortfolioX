@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Log in - PortfolioX</title>
+<meta name="description" content="PortfolioX helps students build a professional portfolio, check readiness and prepare for internships and placements.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+</head>
+<body data-page="login">
+<main class="auth-page">
+  <div class="auth-card">
+    <a class="brand" href="/"><span class="brand-mark" aria-hidden="true">PX</span>PortfolioX</a>
+    <h1>Welcome back</h1>
+    <p class="muted">Log in to continue building your portfolio.</p>
+    <div id="form-msg" class="msg" role="alert" hidden></div>
+    <form id="auth-form" novalidate>
+      <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+      <div class="field"><label for="password">Password</label>
+        <div class="pw-wrap"><input id="password" name="password" type="password" autocomplete="current-password" required><button class="toggle-pw" type="button" data-target="password" aria-pressed="false">Show</button></div></div>
+      <button class="btn btn-primary" type="submit">Log in</button>
+    </form>
+    
+    <div class="auth-links"><a href="/forgot-password.html">Forgot password?</a><span>New here? <a href="/signup.html">Create an account</a></span></div>
+  </div>
+</main>
+<script src="/vendor/supabase.js"></script>
+<script src="/js/common.js"></script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

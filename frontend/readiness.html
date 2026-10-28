@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Readiness meter - PortfolioX</title>
+<meta name="description" content="PortfolioX helps students build a professional portfolio, check readiness and prepare for internships and placements.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+</head>
+<body data-page="readiness">
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <button id="menu-btn" class="icon-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar">&#9776;</button>
+  <span class="brand">PortfolioX</span>
+</header>
+<div class="shell">
+  <aside id="sidebar" class="sidebar" aria-label="Sidebar"></aside>
+  <main id="main" class="main">
+
+    <div class="page-head"><div><h1>Portfolio Readiness Meter</h1><p class="muted">See how complete your portfolio is and what to improve next.</p></div></div>
+    <div id="status" role="status" aria-live="polite"></div>
+    <div class="msg msg-info"><strong>Please note:</strong> this score measures how <em>complete</em> your portfolio information is, using the fixed rules shown below. It is not a prediction of employability, and it cannot guarantee an internship or placement.</div>
+    <section class="card" aria-labelledby="h-score">
+      <h2 id="h-score">Your score</h2>
+      <div class="meter-row">
+        <div class="ring" id="ring"><div class="ring-inner"><strong id="ring-num">0</strong><span>/ 100</span></div></div>
+        <div><span class="level" id="level"></span><p id="score-summary"></p></div>
+      </div>
+    </section>
+    <div class="grid-2">
+      <section class="card" aria-labelledby="h-break"><h2 id="h-break">Points breakdown</h2><div id="criteria"></div></section>
+      <section class="card" aria-labelledby="h-rec"><h2 id="h-rec">Suggested improvements</h2><div id="recs"></div></section>
+    </div>
+    <section class="card" aria-labelledby="h-check"><h2 id="h-check">Placement preparation checklist</h2><div id="checklist"></div></section>
+  </main>
+</div>
+<div id="scrim" class="scrim"></div>
+<script src="/vendor/supabase.js"></script>
+<script src="/js/common.js"></script>
+<script src="/js/readiness.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard - PortfolioX</title>
+<meta name="description" content="PortfolioX helps students build a professional portfolio, check readiness and prepare for internships and placements.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+</head>
+<body data-page="dashboard">
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <button id="menu-btn" class="icon-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar">&#9776;</button>
+  <span class="brand">PortfolioX</span>
+</header>
+<div class="shell">
+  <aside id="sidebar" class="sidebar" aria-label="Sidebar"></aside>
+  <main id="main" class="main">
+
+    <div class="page-head">
+      <div><h1 id="welcome">Welcome!</h1><p class="muted">Here is a snapshot of your portfolio.</p></div>
+      <a class="btn btn-primary" href="/portfolio.html?preview=1">Preview portfolio</a>
+    </div>
+    <div id="status" role="status" aria-live="polite"></div>
+    <div class="stats">
+      <div class="card stat"><span class="stat-label">Readiness score</span><strong id="st-score">&ndash;</strong></div>
+      <div class="card stat"><span class="stat-label">Profile completion</span><strong id="st-profile">&ndash;</strong></div>
+      <div class="card stat"><span class="stat-label">Projects</span><strong id="st-projects">&ndash;</strong></div>
+      <div class="card stat"><span class="stat-label">Achievements</span><strong id="st-ach">&ndash;</strong></div>
+    </div>
+    <div class="grid-2">
+      <section class="card" aria-labelledby="h-ready">
+        <h2 id="h-ready">Portfolio readiness</h2>
+        <div class="meter-row">
+          <div class="ring" id="ring"><div class="ring-inner"><strong id="ring-num">0</strong><span>/ 100</span></div></div>
+          <div><span class="level" id="level"></span><div id="next-action"></div>
+          <p class="small muted">This score measures how complete your portfolio is. It does not predict hiring or placement results.</p>
+          <a href="/readiness.html">See full breakdown &rarr;</a></div>
+        </div>
+      </section>
+      <section class="card" aria-labelledby="h-recent"><h2 id="h-recent">Recent projects</h2><div id="recent"></div></section>
+    </div>
+    <section class="card" aria-labelledby="h-check"><h2 id="h-check">Placement preparation checklist</h2><div id="checklist"></div></section>
+    <section class="card" aria-labelledby="h-quick"><h2 id="h-quick">Quick actions</h2>
+      <div class="quick">
+        <a class="btn btn-secondary" href="/profile.html">Edit profile</a>
+        <a class="btn btn-secondary" href="/projects.html">Manage projects</a>
+        <a class="btn btn-secondary" href="/achievements.html">Add achievement</a>
+        <a class="btn btn-secondary" href="/resume.html">Build resume</a>
+        <a class="btn btn-secondary" href="/profile.html#share-heading">Share portfolio</a>
+      </div>
+    </section>
+  </main>
+</div>
+<div id="scrim" class="scrim"></div>
+<script src="/vendor/supabase.js"></script>
+<script src="/js/common.js"></script>
+<script src="/js/dashboard.js"></script>
+</body>
+</html>

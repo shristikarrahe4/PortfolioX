@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sign up - PortfolioX</title>
+<meta name="description" content="PortfolioX helps students build a professional portfolio, check readiness and prepare for internships and placements.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+</head>
+<body data-page="signup">
+<main class="auth-page">
+  <div class="auth-card">
+    <a class="brand" href="/"><span class="brand-mark" aria-hidden="true">PX</span>PortfolioX</a>
+    <h1>Create your account</h1>
+    <p class="muted">Start building your student portfolio.</p>
+    <div id="form-msg" class="msg" role="alert" hidden></div>
+    <form id="auth-form" novalidate>
+      <div class="field"><label for="full_name">Full name</label><input id="full_name" name="full_name" type="text" autocomplete="name" maxlength="100" required></div>
+      <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+      <div class="field"><label for="password">Password</label>
+        <div class="pw-wrap"><input id="password" name="password" type="password" autocomplete="new-password" required><button class="toggle-pw" type="button" data-target="password" aria-pressed="false">Show</button></div></div>
+      <p class="hint">At least 8 characters with letters and numbers.</p>
+      <div class="field"><label for="confirm">Confirm password</label>
+        <div class="pw-wrap"><input id="confirm" name="confirm" type="password" autocomplete="new-password" required><button class="toggle-pw" type="button" data-target="confirm" aria-pressed="false">Show</button></div></div>
+      <button class="btn btn-primary" type="submit">Create account</button>
+    </form>
+    
+    <div class="auth-links"><span>Already registered? <a href="/login.html">Log in</a></span></div>
+  </div>
+</main>
+<script src="/vendor/supabase.js"></script>
+<script src="/js/common.js"></script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

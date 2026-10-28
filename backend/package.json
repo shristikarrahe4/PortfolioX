@@ -1,0 +1,20 @@
+{
+  "name": "portfoliox-backend",
+  "version": "1.0.0",
+  "description": "PortfolioX - Student Digital Portfolio Builder (Express API + static frontend)",
+  "main": "server.js",
+  "private": true,
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test tests/readiness.test.js tests/validate.test.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.4",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.4.0",
+    "helmet": "^7.1.0"
+  }
+}

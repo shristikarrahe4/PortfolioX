@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Profile - PortfolioX</title>
+<meta name="description" content="PortfolioX helps students build a professional portfolio, check readiness and prepare for internships and placements.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+</head>
+<body data-page="profile">
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <button id="menu-btn" class="icon-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar">&#9776;</button>
+  <span class="brand">PortfolioX</span>
+</header>
+<div class="shell">
+  <aside id="sidebar" class="sidebar" aria-label="Sidebar"></aside>
+  <main id="main" class="main">
+
+    <div class="page-head"><div><h1>Your profile</h1><p class="muted">The information used for your portfolio, resume and readiness score.</p></div></div>
+    <div id="status" role="status" aria-live="polite"></div>
+    <section class="card" aria-labelledby="h-prof">
+      <h2 id="h-prof">Profile completion: <span id="completion-text">0%</span></h2>
+      <div id="completion-bar"></div>
+    </section>
+    <form id="profile-form" class="card" novalidate>
+      <h2>Professional details</h2>
+      <p class="small muted"><span class="req">*</span> required</p>
+      <div class="form-grid">
+<div class="field"><label for="full_name">Full name <span class="req" aria-hidden="true">*</span></label><input id="full_name" name="full_name" type="text" required maxlength="100" autocomplete="name"></div>
+<div class="field"><label for="headline">Profile headline</label><input id="headline" name="headline" type="text" maxlength="120"><p class="hint">Example: First-year B.Tech student interested in web development.</p></div>
+<div class="field full"><label for="intro">Professional introduction</label><textarea id="intro" name="intro" maxlength="600"></textarea><p class="hint">A few sentences about who you are and what you want to learn or build (up to 600 characters).</p></div>
+<div class="field"><label for="college">College</label><input id="college" name="college" type="text" maxlength="150"></div>
+<div class="field"><label for="course">Course / branch</label><input id="course" name="course" type="text" maxlength="100"></div>
+<div class="field"><label for="year_of_study">Current year of study</label><select id="year_of_study" name="year_of_study"><option value="">Select year</option><option value="1">1st year</option><option value="2">2nd year</option><option value="3">3rd year</option><option value="4">4th year</option><option value="5">5th year</option><option value="6">6th year</option></select></div>
+<div class="field full"><label for="technical_skills">Technical skills</label><input id="technical_skills" name="technical_skills" type="text" maxlength="600"><p class="hint">Separate with commas. Add only skills you can explain.</p></div>
+<div class="field full"><label for="soft_skills">Soft skills</label><input id="soft_skills" name="soft_skills" type="text" maxlength="600"><p class="hint">Example: Teamwork, Communication, Time management.</p></div>
+<div class="field full"><label for="interests">Areas of interest</label><input id="interests" name="interests" type="text" maxlength="600"><p class="hint">Example: Web development, Embedded systems.</p></div>
+<div class="field"><label for="github_url">GitHub profile URL</label><input id="github_url" name="github_url" type="url" placeholder="https://github.com/your-name"><p class="hint">Must be a github.com link.</p></div>
+<div class="field"><label for="linkedin_url">LinkedIn profile URL</label><input id="linkedin_url" name="linkedin_url" type="url" placeholder="https://www.linkedin.com/in/your-name"><p class="hint">Must be a linkedin.com link.</p></div>
+<div class="field"><label for="website_url">Professional website (optional)</label><input id="website_url" name="website_url" type="url" placeholder="https://"></div>
+<div class="field"><label for="contact_email">Contact email</label><input id="contact_email" name="contact_email" type="email" autocomplete="email"><p class="hint">Shown publicly only if you tick &ldquo;Show contact email&rdquo; in the sharing settings below.</p></div>
+      </div>
+      <button class="btn btn-primary" type="submit">Save profile</button>
+    </form>
+    <form id="share-form" class="card" novalidate>
+      <h2 id="share-heading">Public portfolio and sharing</h2>
+      <div id="share-state" class="msg msg-info" role="status"></div>
+      <div id="share-info"></div>
+      <div class="field"><label for="username">Public username</label>
+        <div class="prefix-input"><span>/u/</span><input id="username" name="username" type="text" maxlength="30" autocapitalize="none" autocomplete="off"></div>
+        <p class="hint">3-30 lowercase letters, numbers, hyphens or underscores. Do not use your email address.</p></div>
+      <div class="check"><input id="is_public" name="is_public" type="checkbox"><label for="is_public"><strong>Make my portfolio public</strong><br><span class="hint">Anyone with the link can view the fields below.</span></label></div>
+      <p class="label">Choose what visitors can see</p>
+      <div class="check"><input id="show_college" name="show_college" type="checkbox"><label for="show_college">Show college, course and year</label></div>
+      <div class="check"><input id="show_interests" name="show_interests" type="checkbox"><label for="show_interests">Show areas of interest</label></div>
+      <div class="check"><input id="show_contact_email" name="show_contact_email" type="checkbox"><label for="show_contact_email">Show contact email</label></div>
+      <p class="small muted">Always public when the portfolio is public: name, headline, introduction, skills, GitHub/LinkedIn/website links, and projects and achievements marked &ldquo;Public&rdquo;. Resume details (phone, location) are never public.</p>
+      <div class="quick"><button class="btn btn-primary" type="submit">Save sharing settings</button><a class="btn btn-secondary" href="/portfolio.html?preview=1">Preview portfolio</a></div>
+    </form>
+  </main>
+</div>
+<div id="scrim" class="scrim"></div>
+<script src="/vendor/supabase.js"></script>
+<script src="/js/common.js"></script>
+<script src="/js/profile.js"></script>
+</body>
+</html>
